@@ -94,10 +94,15 @@ def next_move(lattice, current_round):
         next_move(lattice, current_round)
 
 
-rounds = 0
-grid = '         '
-current_field(grid)
-while rounds < 10:
-    rounds += 1
-    next_move(grid, rounds)
-    check_win_state(grid, rounds)
+def main():
+    rounds = 0
+    current_field(grid)
+    while rounds < 10:
+        rounds += 1
+        next_move(grid, rounds)
+        check_win_state(grid, rounds)
+
+
+if __name__ == '__main__':
+    grid = '         '
+    main()
