@@ -6,6 +6,7 @@ def current_field(cells):
     print('---------')
 
 
+# TODO: Refactor this whole mess
 def check_win_state(cells, current_round):
     x_counter = 0
     o_counter = 0
@@ -64,7 +65,7 @@ def next_move(lattice, current_round):
     move = input('Enter the coordinates: ')
     move = move.replace(' ', '')
     move_lst = list(move)
-    if move.isnumeric():
+    if move.isnumeric() and len(move_lst) == 2:
         if 0 < int(move_lst[0]) < 4 and 0 < int(move_lst[1]) < 4:
             if move_lst[0] == '1':
                 index = int(move_lst[0]) + int(move_lst[1]) - 2
@@ -90,7 +91,7 @@ def next_move(lattice, current_round):
             print('Coordinates should be from 1 to 3!')
             next_move(lattice, current_round)
     else:
-        print('You should enter numbers!')
+        print('You should enter two digits!')
         next_move(lattice, current_round)
 
 
