@@ -61,6 +61,7 @@ def check_win_state(cells, current_round):
         quit()
 
 
+# TODO: Take care of possible wrong inputs ( len(move) == 1, len(move) > 2 )
 def next_move(lattice, current_round):
     move = input('Enter the coordinates: ')
     move = move.replace(' ', '')
